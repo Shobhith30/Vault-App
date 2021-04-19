@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="5dp">
+
+        <TextView
+            android:id="@+id/sector_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans"
+            android:text="Social Media"
+            android:textColor="#3C4857"
+            android:textSize="19sp" />
+
+        <TextView
+            android:id="@+id/sector_count"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/sector_count_background"
+            android:fontFamily="@font/open_sans_semibold"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="07"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+</LinearLayout>

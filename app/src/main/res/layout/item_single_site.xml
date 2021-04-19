@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/single_site_background"
+    android:layout_marginBottom="10dp">
+
+    <ImageView
+        android:id="@+id/site_logo"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="11dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/site_logo" />
+
+    <TextView
+        android:id="@+id/site_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/copy_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/open_sans"
+        android:gravity="center"
+        android:paddingStart="5dp"
+        android:text="@string/copy_password"
+        android:textColor="@color/blue"
+        android:textSize="12sp"
+        app:drawableLeftCompat="@drawable/ic_copy"
+        app:layout_constraintRight_toRightOf="@id/site_name"
+        app:layout_constraintTop_toBottomOf="@id/site_name" />
+
+    <TextView
+        android:background="@color/grey_alpha"
+        android:id="@+id/site_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/open_sans"
+        android:gravity="center"
+        android:paddingVertical="13dp"
+        android:textColor="#3C4857"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/copy_password" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

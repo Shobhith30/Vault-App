@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Vault pplication</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="mpin">MPin</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="re_enter_mpin">Re-Enter 4 digit MPin</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="enter_mpin">Enter 4 digit MPin</string>
+    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="use_your_fingerprint_to_login">USE YOUR FINGERPRINT TO LOGIN</string>
+    <string name="or">OR</string>
+    <string name="url">URL</string>
+    <string name="site_name">Site Name</string>
+    <string name="sector_or_folder">Sector/Folder</string>
+    <string name="user_name">User Name</string>
+    <string name="site_password">Site Password</string>
+    <string name="notes">Notes</string>
+    <string name="Search">search</string>
+    <string name="sync">Sync</string>
+    <string name="profile">Profile</string>
+    <string name="copy_password">Copy Password</string>
+    <string name="update">Update</string>
+    <string name="add_new_site">Add New Site</string>
+    <string name="type_keywords_to_search">Type keywords to search</string>
+    <string name="sites">Sites</string>
+    <string name="password_copied">Copied Password</string>
+    <string name="edit">Edit</string>
+    <string name="client_id">278354280967-gpnnkr7mma9h4f8im8v0bcftmln6f0q9.apps.googleusercontent.com</string>
+    <string name="google_login_fail">Failed to Login</string>
+    <string name="site_logo">Site Logo</string>
+    <string-array name="sector">
+        <item>Social Media</item>
+        <item>Bank Accounts</item>
+        <item>Wallets</item>
+    </string-array>
+</resources>
