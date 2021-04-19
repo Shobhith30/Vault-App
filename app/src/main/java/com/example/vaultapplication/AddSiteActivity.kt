@@ -226,4 +226,5 @@ class AddSiteActivity : AppCompatActivity() {
         }
         return true
     }
+    fun test(){}
 }
