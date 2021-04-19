@@ -8,7 +8,6 @@
     <string name="mobile_number">Mobile Number</string>
     <string name="mpin">MPin</string>
     <string name="forgot_your_password">Forgot your password?</string>
-    <string name="sign_in">SIGN IN</string>
     <string name="re_enter_mpin">Re-Enter 4 digit MPin</string>
     <string name="sign_up">SIGN UP</string>
     <string name="enter_mpin">Enter 4 digit MPin</string>
@@ -34,6 +33,7 @@
     <string name="client_id">278354280967-gpnnkr7mma9h4f8im8v0bcftmln6f0q9.apps.googleusercontent.com</string>
     <string name="google_login_fail">Failed to Login</string>
     <string name="site_logo">Site Logo</string>
+    <string name="sign_in">SIGN IN</string>
     <string-array name="sector">
         <item>Social Media</item>
         <item>Bank Accounts</item>
