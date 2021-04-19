@@ -1,6 +1,5 @@
 package com.example.vaultapplication
 
-import android.R
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -197,7 +196,7 @@ class AddSiteActivity : AppCompatActivity() {
 
         sectorDao.getSector().observe(this, {
             val sectorList = it.map { it.getSectorName() }
-            val adapter = ArrayAdapter(this, R.layout.simple_list_item_1, sectorList)
+            val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, sectorList)
             addSiteBinding.siteDetails.sector.setAdapter(adapter)
             addSiteBinding.siteDetails.sector.onItemClickListener =
                 AdapterView.OnItemClickListener { parent, view, position, id ->
