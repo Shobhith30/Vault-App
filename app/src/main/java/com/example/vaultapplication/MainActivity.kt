@@ -68,10 +68,18 @@ class MainActivity : AppCompatActivity() {
         initializeRecyclerView()
         setSearchButtonClickListener()
         hideKeyboardOnFocusChange()
+
+        //firebase initialization
+
+        //firebase authentication
         mAuth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
+
+        //firebase database
         dbRef = FirebaseDatabase.getInstance()
 
+
+        //google sign in dialog
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.client_id))
             .requestEmail()
@@ -81,10 +89,13 @@ class MainActivity : AppCompatActivity() {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
 
+        //used to get folders
         siteDao.getSectorCount().observe(this, {
             mainBinding.sector.adapter = SectorSpinnerAdapter(applicationContext, it)
         })
 
+
+        //when we click on folder dropdown
         mainBinding.sector.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
@@ -167,19 +178,26 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    //sync data
+
+    //called when we click on sync
+
     private fun signIn() {
 
+        //checking whether user signed in to google account
         if (mAuth.currentUser != null) {
             backupSiteData()
             backupSectorData()
             return
         }
+        //if not signed in show sign in dialog
         val signInIntent = mGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
     private fun backupSectorData() {
 
+        //get data from firebase
         dbRef.getReference("sector").child(mAuth.currentUser.uid)
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -187,6 +205,8 @@ class MainActivity : AppCompatActivity() {
                     lifecycleScope.launch(Dispatchers.IO) {
                         val sectorDb = sectorDao.getSectorBackup()
                         Log.e("sector",sectorDb.toString())
+
+                        //checking data in firebase is present in local database
                         for (snapshot in snapshot.children) {
                             val sector = snapshot.getValue(Sector::class.java) as Sector
                             var isEqual = false
@@ -201,6 +221,8 @@ class MainActivity : AppCompatActivity() {
                             if (!isEqual)
                                 sectorDao.addSector(sector)
                         }
+
+                        //checking data in local database present in firebase
 
                         for (sectorDb in sectorDb) {
                             var isEqual = false
@@ -298,6 +320,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    //used for folders
     private fun backupSiteData() {
         val dialog = Dialog(this)
         showDataSyncDialog(dialog)
@@ -394,6 +417,8 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+    //show syncing layout
 
     private fun showDataSyncDialog(dialog: Dialog) {
 
